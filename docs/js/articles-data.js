@@ -84,6 +84,18 @@ window.MENARA_ARTICLES = [
     date: 'Juin 2025',
     cover: 'assets/articles/images/entretien-daher.png',
     pdf: 'assets/articles/pdf/entretien-daher.pdf'
+  },
+  {
+    id: 8,
+    slug: 'afrique-inde',
+    title: 'L\'Afrique et l\'Inde : vers un nouveau partenariat stratégique ?',
+    excerpt: '',
+    category: 'Gouvernance',
+    categoryLabel: 'Gouvernance',
+    author: 'Vincent Plantevin et Romain Pretto',
+    date: 'Novembre 2025',
+    cover: 'assets/articles/images/afrique-inde.png',
+    pdf: 'assets/articles/pdf/afrique-inde.pdf'
   }
 ];
 
