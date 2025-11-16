@@ -1,0 +1,390 @@
+/* =====================================================
+   RESPONSIVE MOBILE ET TABLETTE (max-width: 1024px)
+   ===================================================== */
+
+@media (max-width: 1024px) {
+  /* ===== HEADER & NAVIGATION ===== */
+  .site-header {
+    padding: 0.75rem 0;
+  }
+  
+  .header-inner {
+    padding: 0 1rem;
+  }
+  
+  .brand-logo {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .brand-text {
+    font-size: 1.1rem;
+  }
+  
+  /* Menu hamburger VISIBLE sur mobile et tablette */
+  .nav-toggle {
+    display: flex !important;
+  }
+  
+  /* Navigation principale - caché par défaut sur mobile/tablette */
+  .main-nav {
+    display: none !important;
+  }
+  
+  /* Menu de navigation - full screen sur mobile */
+  .main-nav {
+    position: fixed !important;
+    top: 64px !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: white !important;
+    backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+    display: none !important;
+    flex-direction: column !important;
+    padding: 0 !important;
+    z-index: 9999 !important;
+    max-height: calc(100vh - 64px) !important;
+    overflow-y: auto !important;
+    bottom: 0 !important;
+    height: calc(100vh - 64px) !important;
+  }
+  
+  .main-nav.mobile-open,
+  .main-nav.open {
+    display: flex !important;
+  }
+  
+  .main-nav ul {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+    width: 100% !important;
+  }
+  
+  .main-nav li {
+    width: 100% !important;
+    display: block !important;
+  }
+  
+  .main-nav a {
+    display: block !important;
+    width: 100% !important;
+    padding: 1.25rem 1.5rem !important;
+    border-radius: 0 !important;
+    text-align: left !important;
+    font-size: 1.2rem !important;
+    font-weight: 500 !important;
+    background: white !important;
+    color: #374151 !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    min-height: 60px !important;
+    line-height: 1.5 !important;
+  }
+  
+  .main-nav a:active,
+  .main-nav a:focus {
+    background: rgba(254, 243, 199, 0.5) !important;
+  }
+  
+  .header-actions {
+    gap: 0.25rem;
+  }
+  
+  .social-icons {
+    gap: 0.5rem;
+  }
+  
+  .social-icons a {
+    width: 32px;
+    height: 32px;
+  }
+  
+  /* Dropdown mobile - CACHÉ par défaut */
+  .has-dropdown .dropdown,
+  .has-dropdown .publications-dropdown {
+    position: static !important;
+    display: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    box-shadow: none !important;
+    background: #f3f4f6 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+  
+  /* FORCER L'AFFICHAGE quand ouvert - TRÈS SPÉCIFIQUE */
+  .main-nav .has-dropdown.mobile-dropdown-open .dropdown,
+  .main-nav .has-dropdown.mobile-dropdown-open .publications-dropdown,
+  .main-nav .has-dropdown.dropdown-open .dropdown,
+  .main-nav .has-dropdown.dropdown-open .publications-dropdown {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+    max-height: 1000px !important;
+    pointer-events: auto !important;
+  }
+  
+  /* Items du dropdown mobile - GRANDS boutons */
+  .has-dropdown .dropdown a,
+  .has-dropdown .publications-dropdown a,
+  .publications-dropdown-item {
+    display: block !important;
+    width: 100% !important;
+    padding: 1.25rem 2rem !important;
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+    color: #1f2937 !important;
+    background: #f3f4f6 !important;
+    border-bottom: 1px solid #d1d5db !important;
+    text-decoration: none !important;
+    min-height: 56px !important;
+  }
+  
+  .has-dropdown .dropdown a:active,
+  .has-dropdown .publications-dropdown a:active,
+  .publications-dropdown-item:active {
+    background: #e5e7eb !important;
+  }
+  
+  /* Désactiver le hover desktop sur mobile */
+  .has-dropdown:hover .dropdown,
+  .has-dropdown:hover .publications-dropdown {
+    display: none !important;
+  }
+  
+  /* ===== PAGE D'ACCUEIL - SECTION PUBLICATIONS ===== */
+  /* Blue box section responsive */
+  .blue-box-section {
+    padding: 3rem 0 !important;
+    min-height: auto !important;
+  }
+  
+  .blue-box-section .container {
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+  
+  .welcome-col {
+    flex: 1 !important;
+    width: 100% !important;
+  }
+  
+  /* Réinitialiser la colonne des articles sur mobile */
+  .articles-col {
+    flex: 1 !important;
+    left: 0 !important;
+    padding: 0 1rem !important;
+    position: static !important;
+  }
+  
+  /* Stack vertical sur mobile - toutes les lignes */
+  .articles-col > div,
+  .overlap-articles-grid {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1.5rem !important;
+    left: 0 !important;
+    position: static !important;
+    width: 100% !important;
+  }
+  
+  /* Articles en pleine largeur sur mobile - ANNULER overlap */
+  .featured-article-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    height: auto !important;
+    min-height: 400px !important;
+    max-height: none !important;
+    position: static !important;
+    left: 0 !important;
+    top: 0 !important;
+    margin: 0 !important;
+    z-index: auto !important;
+  }
+  
+  /* Images des articles */
+  .featured-article-card .article-image-link,
+  .featured-article-card .article-image {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+  }
+  
+  /* DÉSACTIVER tous les effets hover/overlap/active sur mobile */
+  .blue-box-section .featured-article-card {
+    transition: none !important;
+    transform: none !important;
+  }
+  
+  .blue-box-section .featured-article-card:hover,
+  .blue-box-section .featured-article-card:focus-within,
+  .blue-box-section .featured-article-card:active {
+    transform: none !important;
+    z-index: auto !important;
+    box-shadow: 0 4px 20px rgba(10,39,106,0.08) !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+  
+  .blue-box-section .featured-article-card:nth-child(2):hover,
+  .blue-box-section .featured-article-card:nth-child(2):focus-within,
+  .blue-box-section .featured-article-card:nth-child(2):active {
+    transform: none !important;
+  }
+  
+  .blue-box-section .featured-article-card:nth-child(3):hover,
+  .blue-box-section .featured-article-card:nth-child(3):focus-within,
+  .blue-box-section .featured-article-card:nth-child(3):active {
+    transform: none !important;
+  }
+  
+  .blue-box-section .overlap-articles-grid:hover .featured-article-card:not(:hover),
+  .blue-box-section .overlap-articles-grid:focus-within .featured-article-card:not(:focus-within) {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+  
+  .blue-box-section .featured-article-card:hover ~ .featured-article-card,
+  .blue-box-section .featured-article-card:focus-within ~ .featured-article-card,
+  .blue-box-section .featured-article-card:active ~ .featured-article-card {
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+  
+  .featured-article-card:hover,
+  .featured-article-card:focus-within,
+  .featured-article-card:active {
+    z-index: auto !important;
+  }
+  
+  /* Désactiver les tooltips sur mobile */
+  .featured-article-card:hover .article-tooltip {
+    display: none !important;
+  }
+  
+  /* Bouton "Voir toutes les publications" pleine largeur et en bas */
+  .articles-col a[href="articles.html"] {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 1rem 1.5rem !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    position: static !important;
+    margin-top: 1.5rem !important;
+    display: flex !important;
+    order: 999 !important;
+  }
+  
+  /* Forcer l'ordre : articles puis bouton */
+  .articles-col {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  /* ===== PAGE À PROPOS - HERO PHARE ===== */
+  #lighthouse-hero {
+    height: 100vh !important;
+  }
+  
+  #lighthouse-image {
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+  
+  #lighthouse-overlay h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  #lighthouse-overlay p {
+    font-size: 1.3rem !important;
+  }
+  
+  /* ===== PAGE À PROPOS - SECTION HERO ===== */
+  .about-hero-heading {
+    font-size: 1.8rem !important;
+  }
+  
+  .about-hero-text {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Cacher l'image parallax sur mobile */
+  .parallax-container,
+  #parallax-section {
+    display: none !important;
+  }
+  
+  /* Section "Qu'est-ce que Menara" - pleine largeur sur mobile */
+  section[style*="bcccdf"] > div[style*="display: flex"] {
+    flex-direction: column !important;
+  }
+  
+  section[style*="bcccdf"] > div > div[style*="flex: 1"] {
+    padding: 2rem 1.5rem !important;
+  }
+  
+  /* Bande de navigation - Stack vertical sur mobile */
+  section[style*="0a276a"] > div {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  
+  .nav-button {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 1rem !important;
+  }
+  
+  /* ===== NOS FORMATS - Stack vertical sur mobile ===== */
+  .expertise-grid {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+  
+  .expertise-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* ===== HERO SECTION ===== */
+  .hero {
+    padding: 60px 0 40px;
+  }
+  
+  .hero-content {
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2rem !important;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}

@@ -9,8 +9,26 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/carousel.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/responsive-mobile.css" />
+  <link rel="stylesheet" href="css/responsive-desktop.css" />
   <link rel="stylesheet" href="css/search.css" />
+  
+  <style>
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    /* Effet smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  
   <!-- Favicons -->
   <link rel="icon" href="assets/images/logo-onglet.png" type="image/png" sizes="any" />
   <link rel="apple-touch-icon" href="assets/images/logo-onglet.png" />
@@ -67,11 +85,22 @@
   </header>
 
   <main>
-    <!-- Box "Qu'est-ce que Menara" -->
-  <section class="section" style="background-color: #bcccdf; padding: 0; min-height: fit-content;">
+    <!-- Hero avec phare en plein écran -->
+    <section id="lighthouse-hero" style="position: relative; height: 100vh; overflow: hidden; background-color: #0a0a0a;">
+      <div id="lighthouse-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('assets/images/PDG.png'); background-position: center; background-size: contain; background-repeat: no-repeat; filter: grayscale(100%) brightness(40%); transition: opacity 0.8s ease, transform 0.8s ease;"></div>
+      
+      <!-- Texte qui apparaît en overlay sur le phare -->
+      <div id="lighthouse-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; z-index: 10; opacity: 1; transition: opacity 0.8s ease;">
+        <h1 style="font-size: 4rem; font-family: 'EB Garamond', serif; font-weight: 700; margin-bottom: 1rem; text-shadow: 0 4px 12px rgba(0,0,0,0.8);">Menara</h1>
+        <p style="font-size: 1.8rem; font-family: 'Inter', sans-serif; font-weight: 300; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">منارة</p>
+      </div>
+    </section>
+
+    <!-- Box "Qu'est-ce que Menara" - apparaît au scroll -->
+    <section id="about-content" class="section" style="background-color: #bcccdf; padding: 0; min-height: fit-content; opacity: 0; transform: translateY(50px); transition: opacity 1s ease, transform 1s ease;">
       <div style="display: flex; align-items: stretch;">
-          <div class="parallax-container" style="flex: 0 0 450px; margin-left: 0; position: relative;" id="parallax-section">
-            <div style="width: 450px; height: 600px; background-image: url('assets/images/PDG.png'); background-attachment: fixed; background-position: left center; background-size: contain; background-repeat: no-repeat; filter: grayscale(100%) brightness(50%); margin-left: 0;"></div>
+        <div class="parallax-container" style="flex: 0 0 450px; margin-left: 0; position: relative;" id="parallax-section">
+          <div style="width: 450px; height: 600px; background-image: url('assets/images/PDG.png'); background-attachment: fixed; background-position: left center; background-size: contain; background-repeat: no-repeat; filter: grayscale(100%) brightness(50%); margin-left: 0;"></div>
         </div>
         <div style="flex: 1; text-align: left; padding: 2rem 3rem; display: flex; flex-direction: column; justify-content: center;">
           <h1 class="about-hero-heading">Qu'est-ce que Menara ?</h1>
@@ -474,32 +503,57 @@ window.addEventListener('scroll', function() {
   <script src="js/search.js"></script>
   <script src="js/articles-data.js"></script>
   
-  <!-- Script pour charger les articles dans le dropdown -->
+  <!-- Script pour l'effet phare avec fade -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Charger les articles depuis articles-data.js
-      if (typeof window.MENARA_ARTICLES !== 'undefined') {
-        const articlesContainer = document.getElementById('articlesDropdownList');
-        if (articlesContainer) {
-          // Trier tous les articles par ordre alphabétique du titre
-          const sortedArticles = [...window.MENARA_ARTICLES].sort((a, b) => {
-            return a.title.localeCompare(b.title, 'fr', { sensitivity: 'base' });
-          });
+      const lighthouseHero = document.getElementById('lighthouse-hero');
+      const lighthouseImage = document.getElementById('lighthouse-image');
+      const lighthouseOverlay = document.getElementById('lighthouse-overlay');
+      const aboutContent = document.getElementById('about-content');
+      
+      // Effet de scroll pour faire disparaître le phare et apparaître le contenu
+      function handleScrollEffect() {
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const triggerPoint = windowHeight * 0.3; // Commence l'effet après 30% de scroll
+        
+        if (scrollY > triggerPoint) {
+          const progress = Math.min((scrollY - triggerPoint) / (windowHeight * 0.5), 1);
           
-          articlesContainer.innerHTML = sortedArticles.map(article => `
-            <a href="article.html?slug=${article.slug}" class="article-dropdown-item">
-              <div class="article-title">${article.title}</div>
-              <div class="article-meta">${article.author} • ${article.date}</div>
-            </a>
-          `).join('');
+          // Fade out du phare et de l'overlay
+          lighthouseImage.style.opacity = 1 - progress;
+          lighthouseImage.style.transform = `scale(${1 + progress * 0.2})`;
+          lighthouseOverlay.style.opacity = 1 - progress;
+          
+          // Fade in du contenu
+          aboutContent.style.opacity = progress;
+          aboutContent.style.transform = `translateY(${50 * (1 - progress)}px)`;
+        } else {
+          // Reset si on remonte
+          lighthouseImage.style.opacity = 1;
+          lighthouseImage.style.transform = 'scale(1)';
+          lighthouseOverlay.style.opacity = 1;
+          aboutContent.style.opacity = 0;
+          aboutContent.style.transform = 'translateY(50px)';
         }
       }
-    });
-  </script>
-  
-  <!-- Script pour l'effet parallaxe -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
+      
+      // Écouter le scroll
+      let ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            handleScrollEffect();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+      
+      // Effet initial
+      handleScrollEffect();
+      
+      // Ancien script parallax
       const parallaxImg = document.getElementById('parallax-img');
       const parallaxSection = document.getElementById('parallax-section');
       

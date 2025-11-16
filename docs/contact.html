@@ -9,7 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/carousel.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/responsive-mobile.css" />
+  <link rel="stylesheet" href="css/responsive-desktop.css" />
   <link rel="stylesheet" href="css/search.css" />
   
   <!-- Favicons -->
@@ -251,77 +252,6 @@
   <script src="main.js"></script>
   <script src="js/search.js"></script>
   <script src="js/articles-data.js"></script>
-  
-  <!-- Script pour charger les articles dans le dropdown -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Charger les articles depuis articles-data.js
-      if (typeof window.MENARA_ARTICLES !== 'undefined') {
-        const articlesContainer = document.getElementById('articlesDropdownList');
-        if (articlesContainer) {
-          // Prendre les 8 premiers articles pour le dropdown
-          const articlesToShow = window.MENARA_ARTICLES.slice(0, 8);
-          
-          articlesContainer.innerHTML = articlesToShow.map(article => `
-            <a href="article.html?slug=${article.slug}" class="article-dropdown-item">
-              <div class="article-title">${article.title}</div>
-              <div class="article-meta">${article.author} • ${article.date}</div>
-            </a>
-          `).join('');
-        }
-      } else {
-        // Fallback si articles-data.js n'est pas chargé
-        const articlesContainer = document.getElementById('articlesDropdownList');
-        if (articlesContainer) {
-          const fallbackArticles = [
-            {
-              title: "L'Egypte, que reste-t-il du \"too big to fail\" ?",
-              slug: "too-big-to-fail",
-              author: "Yasmine Guemmaz",
-              date: "Mars 2025"
-            },
-            {
-              title: "Retour du protectionnisme : quelles perspectives pour l'Afrique ?",
-              slug: "protectionnisme-afrique",
-              author: "Yasmine Guemmaz",
-              date: "Avril 2025"
-            },
-            {
-              title: "France-Maroc-Algérie, une histoire d'alliances et de rivalités",
-              slug: "france-maroc-algerie",
-              author: "Vincent Plantevin",
-              date: "12 mai 2025"
-            },
-            {
-              title: "Raffinerie Dangote",
-              slug: "raffinerie-dangote",
-              author: "Auteur",
-              date: "2025"
-            },
-            {
-              title: "Reconstruction de la Syrie",
-              slug: "reconstruction-syrie",
-              author: "Auteur",
-              date: "2025"
-            },
-            {
-              title: "Entretien avec Sidi Ould Tah",
-              slug: "sidi-ould-tah",
-              author: "Auteur",
-              date: "2025"
-            }
-          ];
-          
-          articlesContainer.innerHTML = fallbackArticles.map(article => `
-            <a href="article.html?slug=${article.slug}" class="article-dropdown-item">
-              <div class="article-title">${article.title}</div>
-              <div class="article-meta">${article.author} • ${article.date}</div>
-            </a>
-          `).join('');
-        }
-      }
-    });
-  </script>
   
   <!-- Script pour le formulaire de contact -->
   <script>

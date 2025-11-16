@@ -9,6 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/carousel.css" />
+  <link rel="stylesheet" href="css/responsive-mobile.css" />
+  <link rel="stylesheet" href="css/responsive-desktop.css" />
   
   <!-- Favicons -->
   <link rel="icon" href="assets/images/logo-onglet.png" type="image/png" sizes="any" />
@@ -34,13 +36,9 @@
                 <path d="M7 10l5 5 5-5z"/>
               </svg>
             </a>
-            <div class="dropdown articles-dropdown" role="menu" aria-label="Articles disponibles">
-              <div class="dropdown-content">
-                <p style="color: #92400e; font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; margin: 0; padding: 2rem; text-align: center; line-height: 1.6;">
-                  🔗 Bande jaune pâle<br>
-                  <span style="font-size: 0.9rem; font-weight: 500;">Les liens des publications seront ajoutés ici</span>
-                </p>
-              </div>
+            <div class="dropdown publications-dropdown" role="menu" aria-label="Menu Publications">
+              <a href="articles.html" class="publications-dropdown-item">Articles</a>
+              <a href="notes-focus.html" class="publications-dropdown-item">Notes Focus</a>
             </div>
           </li>
           <li><a href="news-events.html">Événements</a></li>
@@ -195,6 +193,7 @@
     </section>
   </main>
 
+  <script src="js/articles-data.js"></script>
   <script src="js/carousel.js"></script>
   <script src="main.js"></script>
 </body>

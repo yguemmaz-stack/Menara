@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/responsive-mobile.css" />
+  <link rel="stylesheet" href="css/responsive-desktop.css" />
   <link rel="stylesheet" href="css/search.css" />
   
   <!-- Favicons -->
@@ -103,28 +104,5 @@
   <script src="js/articles-data.js"></script>
   <script src="main.js"></script>
   <script src="js/search.js"></script>
-  
-  <!-- Script pour charger les articles dans le dropdown -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Charger les articles depuis articles-data.js
-      if (typeof window.MENARA_ARTICLES !== 'undefined') {
-        const articlesContainer = document.getElementById('articlesDropdownList');
-        if (articlesContainer) {
-          // Trier tous les articles par ordre alphabétique du titre
-          const sortedArticles = [...window.MENARA_ARTICLES].sort((a, b) => {
-            return a.title.localeCompare(b.title, 'fr', { sensitivity: 'base' });
-          });
-          
-          articlesContainer.innerHTML = sortedArticles.map(article => `
-            <a href="article.html?slug=${article.slug}" class="article-dropdown-item">
-              <div class="article-title">${article.title}</div>
-              <div class="article-meta">${article.author} • ${article.date}</div>
-            </a>
-          `).join('');
-        }
-      }
-    });
-  </script>
 </body>
 </html>

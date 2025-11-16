@@ -7,7 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/responsive-mobile.css" />
+  <link rel="stylesheet" href="css/responsive-desktop.css" />
   <link rel="stylesheet" href="css/search.css" />
   <!-- Favicons -->
   <link rel="icon" href="assets/images/logo-onglet.png" type="image/png" sizes="any" />
@@ -19,17 +20,22 @@
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Accueil Menara">
-  <img class="brand-logo" src="assets/images/logo.png" alt="Logo Menara" />
+        <img class="brand-logo" src="assets/images/logo.png" alt="Logo Menara" />
         <span class="brand-text">Menara</span>
       </a>
       <nav class="main-nav" role="navigation" aria-label="Navigation principale">
         <ul>
           <li><a href="about.html">À propos</a></li>
-          <li class="has-dropdown is-active">
-            <a href="articles.html">Publications</a>
-            <div class="dropdown" role="menu" aria-label="Catégories d’articles">
-              <a href="articles.html">Articles</a>
-              <a href="notes-focus.html">Notes Focus</a>
+          <li class="has-dropdown">
+            <a href="articles.html">
+              Publications
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="margin-left: 0.5rem; transition: transform 0.3s ease;">
+                <path d="M7 10l5 5 5-5z"/>
+              </svg>
+            </a>
+            <div class="dropdown publications-dropdown" role="menu" aria-label="Menu Publications">
+              <a href="articles.html" class="publications-dropdown-item">Articles</a>
+              <a href="notes-focus.html" class="publications-dropdown-item">Notes Focus</a>
             </div>
           </li>
           <li><a href="news-events.html">Événements</a></li>
@@ -51,7 +57,9 @@
         </div>
         <a class="btn btn-primary" href="contact.html">Nous écrire</a>
         <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
-          <span class="nav-bar"></span><span class="nav-bar"></span><span class="nav-bar"></span>
+          <span class="nav-bar"></span>
+          <span class="nav-bar"></span>
+          <span class="nav-bar"></span>
         </button>
       </div>
     </div>

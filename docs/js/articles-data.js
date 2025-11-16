@@ -94,7 +94,7 @@ window.MENARA_ARTICLES = [
     categoryLabel: 'Gouvernance',
     author: 'Vincent Plantevin et Romain Pretto',
     date: 'Novembre 2025',
-    cover: 'assets/articles/images/afrique-inde.png',
+    cover: 'assets/articles/images/inde-afrique.jpg',
     pdf: 'assets/articles/pdf/afrique-inde.pdf'
   }
 ];
@@ -144,3 +144,9 @@ window.MENARA_ARTICLES = [
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', populate); else populate();
 })();
+
+if (typeof window !== 'undefined') {
+  window.dispatchEvent(new CustomEvent('menara:articles-ready', {
+    detail: window.MENARA_ARTICLES
+  }));
+}

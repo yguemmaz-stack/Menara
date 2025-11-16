@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔧 Test Menu Hamburger</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      padding: 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    
+    h1 {
+      color: #667eea;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    
+    .test-section {
+      background: #f0fff4;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #48bb78;
+    }
+    
+    .test-section h2 {
+      color: #22543d;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    
+    .test-steps {
+      list-style: decimal;
+      padding-left: 1.5rem;
+      color: #2d3748;
+    }
+    
+    .test-steps li {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+    }
+    
+    .test-steps strong {
+      color: #22543d;
+    }
+    
+    .console-log {
+      background: #1a202c;
+      color: #68d391;
+      padding: 1.5rem;
+      border-radius: 10px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      margin: 1.5rem 0;
+      overflow-x: auto;
+    }
+    
+    .console-log p {
+      margin-bottom: 0.5rem;
+    }
+    
+    .warning {
+      background: #fff5f5;
+      border-left: 4px solid #fc8181;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin: 1.5rem 0;
+    }
+    
+    .warning h3 {
+      color: #c53030;
+      margin-bottom: 0.75rem;
+    }
+    
+    .warning p {
+      color: #742a2a;
+      line-height: 1.6;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      margin: 0.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    }
+    
+    .btn-group {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+      
+      .container {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔧 Test du Menu Hamburger</h1>
+    
+    <div class="test-section">
+      <h2>✅ Corrections Appliquées</h2>
+      <ul class="test-steps">
+        <li><strong>JavaScript encapsulé</strong> dans DOMContentLoaded pour éviter les erreurs de timing</li>
+        <li><strong>Logs de débogage</strong> ajoutés pour tracer chaque action</li>
+        <li><strong>Zone de clic élargie</strong> pour faciliter le tap sur mobile</li>
+        <li><strong>Classes CSS forcées</strong> avec !important pour éviter les conflits</li>
+        <li><strong>Event.preventDefault()</strong> pour éviter tout comportement par défaut</li>
+      </ul>
+    </div>
+    
+    <div class="test-section" style="background: #ebf8ff; border-color: #4299e1;">
+      <h2 style="color: #2c5282;">📱 Comment Tester</h2>
+      <ol class="test-steps">
+        <li>Ouvrez le site sur votre <strong>téléphone</strong> : http://192.168.1.2:8080/index.html</li>
+        <li>Regardez en <strong>haut à droite</strong> - le bouton ☰ devrait être visible</li>
+        <li><strong>Tapez sur le bouton</strong> hamburger</li>
+        <li>Le menu devrait s'ouvrir en plein écran avec :
+          <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+            <li>À propos</li>
+            <li>Publications (avec sous-menu)</li>
+            <li>Événements</li>
+            <li>Contact</li>
+          </ul>
+        </li>
+        <li><strong>Sur ordinateur</strong> : Ouvrez les DevTools (F12), activez le mode mobile (Ctrl+Shift+M)</li>
+      </ol>
+    </div>
+    
+    <div class="console-log">
+      <p><strong>✨ Messages de la console JavaScript :</strong></p>
+      <p>🚀 Menu hamburger - Initialisation...</p>
+      <p>✅ Bouton hamburger trouvé</p>
+      <p>✅ Menu de navigation trouvé</p>
+      <p>✅ Menu hamburger initialisé avec succès !</p>
+      <p style="margin-top: 1rem;"><strong>Quand vous cliquez sur le bouton :</strong></p>
+      <p>🍔 Clic hamburger - État actuel: false → Nouvel état: true</p>
+      <p>📱 Mode mobile - Classe mobile-open: true</p>
+    </div>
+    
+    <div class="warning">
+      <h3>🔍 Vérifications si Ça ne Marche Pas</h3>
+      <p><strong>1. Ouvrez la console (F12) :</strong></p>
+      <ul style="margin-left: 1.5rem; margin-top: 0.5rem; margin-bottom: 1rem;">
+        <li>Cherchez les messages : "✅ Menu hamburger initialisé"</li>
+        <li>Vérifiez qu'il n'y a pas d'erreurs en rouge</li>
+        <li>Quand vous cliquez, vous devriez voir : "🍔 Clic hamburger"</li>
+      </ul>
+      
+      <p><strong>2. Inspectez l'élément (sur le bouton) :</strong></p>
+      <ul style="margin-left: 1.5rem; margin-top: 0.5rem; margin-bottom: 1rem;">
+        <li>Le bouton devrait avoir : <code>display: flex !important</code></li>
+        <li>Vérifiez que <code>z-index: 10000</code> est appliqué</li>
+      </ul>
+      
+      <p><strong>3. Videz le cache :</strong></p>
+      <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+        <li>Sur mobile : Menu → Paramètres → Effacer les données</li>
+        <li>Ou testez en navigation privée</li>
+      </ul>
+    </div>
+    
+    <div class="test-section">
+      <h2>🎯 Ce Qui Devrait Se Passer</h2>
+      <ul class="test-steps">
+        <li><strong>Clic sur ☰</strong> → Menu s'ouvre en plein écran blanc</li>
+        <li><strong>Les barres du hamburger</strong> se transforment en X</li>
+        <li><strong>Tous les liens</strong> sont visibles et cliquables</li>
+        <li><strong>Clic sur un lien</strong> → Navigation + menu se ferme</li>
+        <li><strong>Clic en dehors</strong> → Menu se ferme</li>
+        <li><strong>Touche Escape</strong> → Menu se ferme</li>
+      </ul>
+    </div>
+    
+    <div class="btn-group">
+      <a href="index.html" class="btn">🏠 Tester le Site</a>
+      <a href="mobile-preview.html" class="btn">📱 Aperçu Multi-Appareils</a>
+    </div>
+    
+    <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 2px solid #e2e8f0; color: #718096;">
+      <p><strong>Serveur actif :</strong> http://localhost:8080</p>
+      <p style="margin-top: 0.5rem;">Sur téléphone : http://192.168.1.2:8080</p>
+    </div>
+  </div>
+</body>
+</html>

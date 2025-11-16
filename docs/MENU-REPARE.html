@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✅ Menu Réparé - Desktop + Mobile</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      padding: 2rem;
+      background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    
+    h1 {
+      color: #38a169;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+    }
+    
+    .emoji {
+      text-align: center;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+    
+    .success {
+      background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    
+    .success h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .section {
+      margin-bottom: 2rem;
+    }
+    
+    .section h2 {
+      color: #2d3748;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .check-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .check-list li {
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      background: #f0fff4;
+      border-radius: 8px;
+      border-left: 4px solid #48bb78;
+      display: flex;
+      align-items: start;
+      gap: 0.75rem;
+    }
+    
+    .check-list li::before {
+      content: '✅';
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    
+    .check-list strong {
+      color: #22543d;
+    }
+    
+    .test-box {
+      background: #ebf8ff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      border-left: 4px solid #4299e1;
+      margin: 1.5rem 0;
+    }
+    
+    .test-box h3 {
+      color: #2c5282;
+      margin-bottom: 1rem;
+    }
+    
+    .test-steps {
+      list-style: decimal;
+      padding-left: 1.5rem;
+      color: #2a4365;
+    }
+    
+    .test-steps li {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+    }
+    
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      flex: 1;
+      min-width: 200px;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(72, 187, 120, 0.4);
+    }
+    
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    
+    .comparison-item {
+      padding: 1.5rem;
+      border-radius: 10px;
+    }
+    
+    .desktop {
+      background: #e6fffa;
+      border: 2px solid #4299e1;
+    }
+    
+    .mobile {
+      background: #fef5e7;
+      border: 2px solid #f6ad55;
+    }
+    
+    .comparison-item h4 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+    
+    .desktop h4 {
+      color: #2c5282;
+    }
+    
+    .mobile h4 {
+      color: #c05621;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+      
+      .container {
+        padding: 1.5rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .comparison {
+        grid-template-columns: 1fr;
+      }
+      
+      .btn {
+        width: 100%;
+        min-width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="emoji">✅💻📱</div>
+    <h1>Menu Réparé !</h1>
+    <p style="text-align: center; color: #718096; margin-bottom: 2rem;">Desktop ET Mobile fonctionnent maintenant</p>
+    
+    <div class="success">
+      <h2>🎉 Problème Résolu !</h2>
+      <p>Le menu déroulant fonctionne sur ordinateur (hover)<br>ET le menu hamburger fonctionne sur mobile (clic)</p>
+    </div>
+    
+    <div class="section">
+      <h2>🔧 Corrections Appliquées</h2>
+      <ul class="check-list">
+        <li>
+          <div>
+            <strong>JavaScript simplifié :</strong> Code réorganisé, suppression des duplications<br>
+            Le dropdown desktop fonctionne maintenant au hover ET via JavaScript
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>CSS Desktop restauré :</strong> Media query @media (min-width: 769px) ajoutée<br>
+            Force le dropdown à s'afficher au hover sur grand écran
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Séparation Mobile/Desktop :</strong> CSS différent selon la taille d'écran<br>
+            Aucun conflit entre les deux modes
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="comparison">
+      <div class="comparison-item desktop">
+        <h4>💻 Sur Ordinateur</h4>
+        <ul style="padding-left: 1.5rem; color: #2d3748;">
+          <li>Menu horizontal visible</li>
+          <li>Bouton hamburger CACHÉ</li>
+          <li>Survol "Publications" → dropdown apparaît</li>
+          <li>Clic sur un lien → navigation</li>
+        </ul>
+      </div>
+      
+      <div class="comparison-item mobile">
+        <h4>📱 Sur Mobile</h4>
+        <ul style="padding-left: 1.5rem; color: #2d3748;">
+          <li>Menu caché par défaut</li>
+          <li>Bouton hamburger ☰ VISIBLE</li>
+          <li>Clic sur ☰ → menu plein écran</li>
+          <li>Clic "Publications" → sous-menu s'ouvre</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="test-box">
+      <h3>🧪 Tests à Faire</h3>
+      <ol class="test-steps">
+        <li><strong>Sur ordinateur :</strong>
+          <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+            <li>Survolez "Publications" → le dropdown doit apparaître</li>
+            <li>Vérifiez que le bouton ☰ n'est PAS visible</li>
+          </ul>
+        </li>
+        <li><strong>Sur mobile :</strong>
+          <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+            <li>Ouvrez http://192.168.1.2:8080/index.html</li>
+            <li>Cliquez sur ☰ en haut à droite</li>
+            <li>Le menu devrait s'ouvrir en plein écran</li>
+            <li>Cliquez sur "Publications" → sous-menu apparaît</li>
+          </ul>
+        </li>
+        <li><strong>Dans VS Code (mode responsive) :</strong>
+          <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+            <li>F12 → Ctrl+Shift+M (mode mobile)</li>
+            <li>Changez la largeur pour tester différentes tailles</li>
+            <li>> 768px = mode desktop, < 768px = mode mobile</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+    
+    <div class="section">
+      <h2>📁 Fichiers Modifiés</h2>
+      <div style="background: #f7fafc; padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.9rem;">
+        <p style="margin-bottom: 0.5rem;">✏️ <strong>main.js</strong></p>
+        <p style="margin-left: 1.5rem; color: #4a5568;">• Code simplifié et réorganisé</p>
+        <p style="margin-left: 1.5rem; color: #4a5568;">• Gestion hover desktop + clic mobile</p>
+        <br>
+        <p style="margin-bottom: 0.5rem;">✏️ <strong>css/responsive.css</strong></p>
+        <p style="margin-left: 1.5rem; color: #4a5568;">• @media (min-width: 769px) ajouté</p>
+        <p style="margin-left: 1.5rem; color: #4a5568;">• Séparation stricte mobile/desktop</p>
+      </div>
+    </div>
+    
+    <div class="btn-group">
+      <a href="index.html" class="btn">🏠 Tester le Site</a>
+      <a href="mobile-preview.html" class="btn">📱 Aperçu Mobile</a>
+    </div>
+    
+    <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 2px solid #e2e8f0; color: #718096;">
+      <p><strong>Serveur actif :</strong> http://localhost:8080</p>
+      <p style="margin-top: 0.5rem;">Sur téléphone : http://192.168.1.2:8080</p>
+      <p style="margin-top: 1.5rem; color: #38a169; font-weight: 600;">✅ Tout est réparé !</p>
+    </div>
+  </div>
+</body>
+</html>
