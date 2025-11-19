@@ -97,7 +97,7 @@
     </section>
 
     <!-- Box "Qu'est-ce que Menara" - apparaît au scroll -->
-    <section id="about-content" class="section" style="background-color: #bcccdf; padding: 0; min-height: fit-content; opacity: 0; transform: translateY(50px); transition: opacity 1s ease, transform 1s ease;">
+    <section id="about-content" class="section" style="background-color: #bcccdf; padding: 0; min-height: fit-content; opacity: 1; transform: translateY(0); transition: opacity 1s ease, transform 1s ease;">
       <div style="display: flex; align-items: stretch;">
         <div class="parallax-container" style="flex: 0 0 450px; margin-left: 0; position: relative;" id="parallax-section">
           <div style="width: 450px; height: 600px; background-image: url('assets/images/PDG.png'); background-attachment: fixed; background-position: left center; background-size: contain; background-repeat: no-repeat; filter: grayscale(100%) brightness(50%); margin-left: 0;"></div>
@@ -503,7 +503,7 @@ window.addEventListener('scroll', function() {
   <script src="js/search.js"></script>
   <script src="js/articles-data.js"></script>
   
-  <!-- Script pour l'effet phare avec fade -->
+  <!-- Script pour l'effet phare avec fade (mobile uniquement) -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const lighthouseHero = document.getElementById('lighthouse-hero');
@@ -511,8 +511,20 @@ window.addEventListener('scroll', function() {
       const lighthouseOverlay = document.getElementById('lighthouse-overlay');
       const aboutContent = document.getElementById('about-content');
       
-      // Effet de scroll pour faire disparaître le phare et apparaître le contenu
+      // Vérifier si on est sur mobile/tablette (max-width: 1024px)
+      function isMobile() {
+        return window.innerWidth <= 1024;
+      }
+      
+      // Effet de scroll pour faire disparaître le phare et apparaître le contenu (mobile uniquement)
       function handleScrollEffect() {
+        // Ne rien faire sur desktop
+        if (!isMobile()) {
+          aboutContent.style.opacity = 1;
+          aboutContent.style.transform = 'translateY(0)';
+          return;
+        }
+        
         const scrollY = window.scrollY;
         const windowHeight = window.innerHeight;
         const triggerPoint = windowHeight * 0.3; // Commence l'effet après 30% de scroll
@@ -521,18 +533,18 @@ window.addEventListener('scroll', function() {
           const progress = Math.min((scrollY - triggerPoint) / (windowHeight * 0.5), 1);
           
           // Fade out du phare et de l'overlay
-          lighthouseImage.style.opacity = 1 - progress;
-          lighthouseImage.style.transform = `scale(${1 + progress * 0.2})`;
-          lighthouseOverlay.style.opacity = 1 - progress;
+          if (lighthouseImage) lighthouseImage.style.opacity = 1 - progress;
+          if (lighthouseImage) lighthouseImage.style.transform = `scale(${1 + progress * 0.2})`;
+          if (lighthouseOverlay) lighthouseOverlay.style.opacity = 1 - progress;
           
           // Fade in du contenu
           aboutContent.style.opacity = progress;
           aboutContent.style.transform = `translateY(${50 * (1 - progress)}px)`;
         } else {
           // Reset si on remonte
-          lighthouseImage.style.opacity = 1;
-          lighthouseImage.style.transform = 'scale(1)';
-          lighthouseOverlay.style.opacity = 1;
+          if (lighthouseImage) lighthouseImage.style.opacity = 1;
+          if (lighthouseImage) lighthouseImage.style.transform = 'scale(1)';
+          if (lighthouseOverlay) lighthouseOverlay.style.opacity = 1;
           aboutContent.style.opacity = 0;
           aboutContent.style.transform = 'translateY(50px)';
         }
@@ -548,6 +560,11 @@ window.addEventListener('scroll', function() {
           });
           ticking = true;
         }
+      });
+      
+      // Écouter le resize pour réinitialiser si on change de taille d'écran
+      window.addEventListener('resize', function() {
+        handleScrollEffect();
       });
       
       // Effet initial

@@ -78,23 +78,14 @@
   }
   
   /* ===== PAGE À PROPOS - HERO PHARE ===== */
+  /* Cacher le phare plein écran sur desktop */
   #lighthouse-hero {
-    height: 100vh !important;
-    background: #0d1b2a !important;
+    display: none !important;
   }
   
-  /* Phare dézoommé pour voir l'image entière */
-  #lighthouse-image {
-    background-size: auto 95% !important;
+  /* Image du phare à côté du texte - prend toute la hauteur */
+  .parallax-container > div {
+    background-size: cover !important;
     background-position: center center !important;
-    background-repeat: no-repeat !important;
-  }
-  
-  #lighthouse-overlay h1 {
-    font-size: 4rem !important;
-  }
-  
-  #lighthouse-overlay p {
-    font-size: 1.8rem !important;
   }
 }
