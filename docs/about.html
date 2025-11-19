@@ -9,32 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/carousel.css" />
-  <link rel="stylesheet" href="css/responsive-mobile.css" />
-  <link rel="stylesheet" href="css/responsive-desktop.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/search.css" />
-  
-  <style>
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-    
-    /* Effet smooth scroll */
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
-  
-  <!-- Favicons -->
   <link rel="icon" href="assets/images/logo-onglet.png" type="image/png" sizes="any" />
   <link rel="apple-touch-icon" href="assets/images/logo-onglet.png" />
   <link rel="shortcut icon" href="assets/images/logo-onglet.png" type="image/png" />
   <meta name="theme-color" content="#0a0a0a" />
 </head>
+
 <body>
   <header class="site-header" role="banner">
     <div class="container header-inner">
@@ -52,7 +34,7 @@
                 <path d="M7 10l5 5 5-5z"/>
               </svg>
             </a>
-            <div class="dropdown publications-dropdown" role="menu" aria-label="Menu Publications">
+            <div class="dropdown publications-dropdown" role="menu">
               <a href="articles.html" class="publications-dropdown-item">Articles</a>
               <a href="notes-focus.html" class="publications-dropdown-item">Notes Focus</a>
             </div>
@@ -61,20 +43,18 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
+
       <div class="header-actions">
         <div class="social-icons">
           <a href="https://www.instagram.com/menaralab/" target="_blank" aria-label="Instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.40z"/>
-            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0..."/></svg>
           </a>
           <a href="https://www.linkedin.com/company/menaraa/?viewAsMember=true" target="_blank" aria-label="LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554..."/></svg>
           </a>
         </div>
         <a class="btn btn-primary" href="contact.html">Nous écrire</a>
+
         <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
           <span class="nav-bar"></span>
           <span class="nav-bar"></span>
@@ -85,31 +65,25 @@
   </header>
 
   <main>
-    <!-- Hero avec phare en plein écran -->
-    <section id="lighthouse-hero" style="position: relative; height: 100vh; overflow: hidden; background-color: #0a0a0a;">
-      <div id="lighthouse-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('assets/images/PDG.png'); background-position: center; background-size: contain; background-repeat: no-repeat; filter: grayscale(100%) brightness(40%); transition: opacity 0.8s ease, transform 0.8s ease;"></div>
-      
-      <!-- Texte qui apparaît en overlay sur le phare -->
-      <div id="lighthouse-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; z-index: 10; opacity: 1; transition: opacity 0.8s ease;">
-        <h1 style="font-size: 4rem; font-family: 'EB Garamond', serif; font-weight: 700; margin-bottom: 1rem; text-shadow: 0 4px 12px rgba(0,0,0,0.8);">Menara</h1>
-        <p style="font-size: 1.8rem; font-family: 'Inter', sans-serif; font-weight: 300; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">منارة</p>
-      </div>
-    </section>
-
-    <!-- Box "Qu'est-ce que Menara" - apparaît au scroll -->
-    <section id="about-content" class="section" style="background-color: #bcccdf; padding: 0; min-height: fit-content; opacity: 1; transform: translateY(0); transition: opacity 1s ease, transform 1s ease;">
+    <!-- Qu'est-ce que Menara -->
+    <section class="section" style="background-color: #bcccdf; padding: 0; min-height: fit-content;">
       <div style="display: flex; align-items: stretch;">
         <div class="parallax-container" style="flex: 0 0 450px; margin-left: 0; position: relative;" id="parallax-section">
           <div style="width: 450px; height: 600px; background-image: url('assets/images/PDG.png'); background-attachment: fixed; background-position: left center; background-size: contain; background-repeat: no-repeat; filter: grayscale(100%) brightness(50%); margin-left: 0;"></div>
         </div>
+
         <div style="flex: 1; text-align: left; padding: 2rem 3rem; display: flex; flex-direction: column; justify-content: center;">
           <h1 class="about-hero-heading">Qu'est-ce que Menara ?</h1>
+
           <p class="about-hero-text about-hero-text--italic">
             <em><strong>Menara</strong> (منارة) : mot arabe qui désigne un phare, qui sert à guider la navigation maritime pendant la nuit.</em>
           </p>
+
           <p class="about-hero-text">
-            <strong>Fondé en 2025, Menara est un think tank étudiant et non-partisan.</strong> Notre but est de penser les enjeux économiques, financiers et politiques dans les pays émergents, surtout en Afrique et au Moyen-Orient.
+            <strong>Fondé en 2025, Menara est un think tank étudiant et non-partisan.</strong>
+            Notre but est de penser les enjeux économiques, financiers et politiques dans les pays émergents, surtout en Afrique et au Moyen-Orient.
           </p>
+
           <p class="about-hero-text">
             <strong>Nous utilisons l'analyse économique pour expliquer les tensions, enjeux et opportunités dans ces régions.</strong>
           </p>
@@ -117,63 +91,55 @@
       </div>
     </section>
 
-    <!-- Bande de navigation -->
+    <!-- Bande de navigation interne -->
     <section style="background-color: #0a276a; padding: 1.5rem 0;">
       <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; gap: 2rem;">
-        <a href="#demarche" class="nav-button">
-          Notre démarche
-        </a>
-        <a href="#formats" class="nav-button">
-          Nos formats
-        </a>
-        <a href="#equipe" class="nav-button">
-          Notre équipe
-        </a>
-        <a href="#communaute" class="nav-button" style="background-color: white; color: #000000; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid white;">
-          Nous rejoindre
-        </a>
+        <a href="#demarche" class="nav-button">Notre démarche</a>
+        <a href="#formats" class="nav-button">Nos formats</a>
+        <a href="#equipe" class="nav-button">Notre équipe</a>
+        <a href="#communaute" class="nav-button" style="background: white; color: black; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600;">Nous rejoindre</a>
       </div>
-    </section>
-
-    <!-- Qui nous sommes / Approche -->
-          </div>
     </section>
 
     <!-- Notre démarche -->
     <section id="demarche" class="section alt" style="margin-top: 8rem;">
       <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem;">
         <h2 style="margin: 0; white-space: nowrap; padding-left: 1rem;">Notre démarche</h2>
-        <div style="flex: 1; height: 1px; background-color: #000000; margin-right: 1rem;"></div>
+        <div style="flex: 1; height: 1px; background-color: #000;"></div>
       </div>
+
       <div class="container">
-        
-        <!-- Démarche 1 -->
+        <!-- Point 1 -->
         <div style="display: flex; align-items: center; margin-bottom: 3rem; gap: 2rem;">
-          <div style="background-color: #10095c; color: #ffffff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600; flex-shrink: 0;">
-            1
-          </div>
-          <div style="flex: 1;">
-            <h3 style="font-size: 1.8rem; color: #000000; margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; text-transform: uppercase; font-weight: 600;">Éclairer</h3>
-            <p style="color: #333; font-size: 1.1rem; line-height: 1.6; margin: 0; font-family: 'Inter', sans-serif;">Notre objectif est de mettre en lumière les dynamiques, l'actualité et les tensions dans les régions d'Afrique et Moyen-Orient.</p>
+          <div style="background-color: #10095c; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">1</div>
+          <div>
+            <h3 style="font-size: 1.8rem; text-transform: uppercase; font-weight: 600;">Éclairer</h3>
+            <p>Mettre en lumière les dynamiques, l'actualité et les tensions en Afrique et Moyen-Orient.</p>
           </div>
         </div>
-        
-        <!-- Démarche 2 -->
+
+        <!-- Point 2 -->
         <div style="display: flex; align-items: center; margin-bottom: 3rem; gap: 2rem;">
-          <div style="background-color: #10095c; color: #ffffff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600; flex-shrink: 0;">
-            2
-          </div>
-          <div style="flex: 1;">
-            <h3 style="font-size: 1.8rem; color: #000000; margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; text-transform: uppercase; font-weight: 600;">Analyser</h3>
-            <p style="color: #333; font-size: 1.1rem; line-height: 1.6; margin: 0; font-family: 'Inter', sans-serif;">Notre méthode est d'utiliser l'analyse économique et financière et les mettre en lien avec les dynamiques culturelles, historiques et géographiques dans ces pays.</p>
+          <div style="background-color: #10095c; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">2</div>
+          <div>
+            <h3 style="font-size: 1.8rem; text-transform: uppercase; font-weight: 600;">Analyser</h3>
+            <p>Utiliser l'analyse économique et financière et la relier aux dynamiques culturelles et historiques.</p>
           </div>
         </div>
-        
-        <!-- Démarche 3 -->
+
+        <!-- Point 3 -->
         <div style="display: flex; align-items: center; margin-bottom: 3rem; gap: 2rem;">
-          <div style="background-color: #10095c; color: #ffffff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600; flex-shrink: 0;">
-            3
+          <div style="background-color: #10095c; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">3</div>
+          <div>
+            <h3 style="font-size: 1.8rem; text-transform: uppercase; font-weight: 600;">Échanger</h3>
+            <p>Rassembler une communauté engagée pour débattre, apprendre et comprendre ensemble.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+
+  
 
           <div style="flex: 1;">
             <h3 style="font-size: 1.8rem; color: #000000; margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; text-transform: uppercase; font-weight: 600;">Échanger</h3>
